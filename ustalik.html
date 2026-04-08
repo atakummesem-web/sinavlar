@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ustalık Sınav Soruları - Atakum MESEM</title>
+    <style>
+        :root { --primary: #003366; --accent: #e63946; --bg: #cbd5e1; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); margin: 0; padding: 15px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        header { 
+            background: linear-gradient(135deg, #003366 0%, #001a33 100%); 
+            color: white; padding: 25px; border-radius: 15px; text-align: center; 
+            margin-bottom: 20px; border-bottom: 5px solid var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .search-container { position: sticky; top: 10px; z-index: 1000; margin-bottom: 25px; }
+        .search-box {
+            width: 100%; padding: 15px 25px; border: 3px solid var(--primary); border-radius: 50px;
+            font-size: 17px; outline: none; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .dept-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
+        .card { 
+            background: white; border-radius: 12px; border: 1px solid #94a3b8; 
+            overflow: hidden; display: flex; flex-direction: column; 
+            transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s; 
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card-header { background: var(--primary); color: white; padding: 12px 15px; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; }
+        .file-list { padding: 10px; list-style: none; margin: 0; }
+        .file-item { margin-bottom: 8px; }
+        .file-link { 
+            display: flex; align-items: center; text-decoration: none; color: #334155;
+            padding: 10px 12px; background: #f8fafc; border-radius: 8px; font-size: 0.85rem; 
+            border: 1px solid #e2e8f0; transition: 0.2s;
+        }
+        .file-link:hover { background: #eff6ff; border-color: var(--accent); color: var(--accent); padding-left: 18px; }
+        .file-link::before { content: "📄"; margin-right: 10px; }
+        footer { text-align: center; margin: 50px 0 20px; padding: 20px; color: #1e293b; font-weight: bold; border-top: 1px solid #94a3b8; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>USTALIK SINAV SORULARI ARŞİVİ</h1>
+        <p>Atakum Mesleki Eğitim Merkezi Dijital Kütüphanesi</p>
+    </header>
+
+    <div class="search-container">
+    <input type="text" id="searchInput" class="search-box" onkeyup="filterCards()" placeholder="alan veya dal adı ile ara...">
+</div>
+
+
+<div class="card">
+            <div class="card-header">AYAKKABI VE SARACİYE TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/AYAKKABI%20VE%20SARAC%C4%B0YE%20TEKNOLOJ%C4%B0S%C4%B0/19125221_Ayakkabi-Modelistligi.pdf" target="_blank">Ayakkabı Modelistliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/AYAKKABI%20VE%20SARAC%C4%B0YE%20TEKNOLOJ%C4%B0S%C4%B0/19125222_Ayakkabi-Uretimi.pdf" target="_blank">Ayakkabı Üretimi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/AYAKKABI%20VE%20SARAC%C4%B0YE%20TEKNOLOJ%C4%B0S%C4%B0/20202650_Saraciye-Modelistligi.pdf" target="_blank">Saraciye Modelistliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/AYAKKABI%20VE%20SARAC%C4%B0YE%20TEKNOLOJ%C4%B0S%C4%B0/20202650_Saraciye-Uretimi.pdf" target="_blank">Saraciye Üretimi</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">BÜRO YÖNETİMİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/B%C3%9CRO%20Y%C3%96NET%C4%B0M%C4%B0/20202853_Yonetici-Sekreterligi.pdf" target="_blank">Yönetici Sekreterliği</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">BİLİŞİM TEKNOLOJİLERİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/B%C4%B0L%C4%B0%C5%9E%C4%B0M%20TEKNOLOJ%C4%B0LER%C4%B0/19125326_Bilgisayar-Teknik-Servisi.pdf" target="_blank">Bilgisayar Teknik Servisi</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">ELEKTRİK-ELEKTRONİK TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/ELEKTR%C4%B0K-ELEKTRON%C4%B0K%20TEKNOLOJ%C4%B0S%C4%B0/19125220_Asansor-Sistemleri.pdf" target="_blank">Asansör Sistemleri</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELEKTR%C4%B0K-ELEKTRON%C4%B0K%20TEKNOLOJ%C4%B0S%C4%B0/19125327_Bobinaj.pdf" target="_blank">Bobinaj</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELEKTR%C4%B0K-ELEKTRON%C4%B0K%20TEKNOLOJ%C4%B0S%C4%B0/19125328_Buro-Makineleri-Teknik-Servisi.pdf" target="_blank">Büro Makineleri Teknik Servisi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELEKTR%C4%B0K-ELEKTRON%C4%B0K%20TEKNOLOJ%C4%B0S%C4%B0/19125431_Elektrik-Tesisat-Pano-Montorlugu.pdf" target="_blank">Elektrik Tesisat Pano Montörlüğü</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELEKTR%C4%B0K-ELEKTRON%C4%B0K%20TEKNOLOJ%C4%B0S%C4%B0/19125431_Elektrikli-Ev-Aletleri-Teknik-Servisi.pdf" target="_blank">Elektrikli Ev Aletleri Teknik Servisi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELEKTR%C4%B0K-ELEKTRON%C4%B0K%20TEKNOLOJ%C4%B0S%C4%B0/19125537_Endustriyel-Bakim-Onarim.pdf" target="_blank">Endüstriyel Bakım Onarım</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELEKTR%C4%B0K-ELEKTRON%C4%B0K%20TEKNOLOJ%C4%B0S%C4%B0/19125650_Goruntu-ve-Ses-Sistemleri.pdf" target="_blank">Görüntü ve Ses Sistemleri</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELEKTR%C4%B0K-ELEKTRON%C4%B0K%20TEKNOLOJ%C4%B0S%C4%B0/19125651_Guvenlik-Sistemleri.pdf" target="_blank">Güvenlik Sistemleri</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELEKTR%C4%B0K-ELEKTRON%C4%B0K%20TEKNOLOJ%C4%B0S%C4%B0/19125651_Haberlesme-Sistemleri.pdf" target="_blank">Haberleşme Sistemleri</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELEKTR%C4%B0K-ELEKTRON%C4%B0K%20TEKNOLOJ%C4%B0S%C4%B0/20202854_Yuksek-Gerilim-Sistemleri.pdf" target="_blank">Yüksek Gerilim Sistemleri</a></li>
+            </ul>
+        </div>
+
+<div class="card">
+            <div class="card-header">ELSANATLARI TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/ELSANATLARI%20TEKNOLOJ%C4%B0S%C4%B0/19125425_Dekoratif-El-Sanatlari.pdf" target="_blank">Dekoratif El Sanatları</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELSANATLARI%20TEKNOLOJ%C4%B0S%C4%B0/19125426_Dekoratif-Ev-Tekstili.pdf" target="_blank">Dekoratif Ev Tekstili</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELSANATLARI%20TEKNOLOJ%C4%B0S%C4%B0/19125430_El-Dokuma.pdf" target="_blank">El Dokuma</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELSANATLARI%20TEKNOLOJ%C4%B0S%C4%B0/19125431_El-ve-Makine-Nakisi.pdf" target="_blank">El ve Makine Nakışı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELSANATLARI%20TEKNOLOJ%C4%B0S%C4%B0/19125651_Hali-Desinatorlugu.pdf" target="_blank">Halı Desinatörlüğü</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/ELSANATLARI%20TEKNOLOJ%C4%B0S%C4%B0/20202650_Sanayi-Nakisi.pdf" target="_blank">Sanayi Nakışı</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">ENDÜSTRİYEL OTOMASYON TEKNOLOJİLERİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/END%C3%9CSTR%C4%B0YEL%20OTOMASYON%20TEKNOLOJ%C4%B0LER%C4%B0/19125538_Endustriyel-Kontrol.pdf" target="_blank">Endüstriyel Kontrol</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">GEMİ YAPIMI</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/GEM%C4%B0%20YAPIMI/19125541_Gemi-Donatim.pdf" target="_blank">Gemi Donatım</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GEM%C4%B0%20YAPIMI/19125542_Gemi-Insa.pdf" target="_blank">Gemi İnşa</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GEM%C4%B0%20YAPIMI/19125751_Kompozit-Tekne-Imalati.pdf" target="_blank">Kompozit Tekne İmalatı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GEM%C4%B0%20YAPIMI/20202853_Yat-Insa.pdf" target="_blank">Yat İnşa</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">GIDA TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/GIDA%20TEKNOLOJ%C4%B0S%C4%B0/19125327_Bitkisel-Yag-Uretim.pdf" target="_blank">Bitkisel Yağ Üretim</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GIDA%20TEKNOLOJ%C4%B0S%C4%B0/19125330_Cay-Isleme.pdf" target="_blank">Çay İşleme</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GIDA%20TEKNOLOJ%C4%B0S%C4%B0/19125331_Cikolata-ve-Sekerleme-Uretimi.pdf" target="_blank">Çikolata ve Şekerleme Üretimi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GIDA%20TEKNOLOJ%C4%B0S%C4%B0/19125538_Endustriyel-Et-Isleme.pdf" target="_blank">Endüstriyel Et İşleme</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GIDA%20TEKNOLOJ%C4%B0S%C4%B0/19125652_Hububat-Isleme.pdf" target="_blank">Hububat İşleme</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GIDA%20TEKNOLOJ%C4%B0S%C4%B0/20202650_Sebze-ve-Meyve-Isleme.pdf" target="_blank">Sebze ve Meyve İşleme</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GIDA%20TEKNOLOJ%C4%B0S%C4%B0/20202803_Su-Urunleri-Isleme.pdf" target="_blank">Su Ürünleri İşleme</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GIDA%20TEKNOLOJ%C4%B0S%C4%B0/20202803_Sut-Isleme.pdf" target="_blank">Süt İşleme</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GIDA%20TEKNOLOJ%C4%B0S%C4%B0/20202909_Zeytin-Isleme.pdf" target="_blank">Zeytin İşleme</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">GRAFİK VE FOTOĞRAF</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/GRAF%C4%B0K%20VE%20FOTO%C4%9ERAF/19125541_Fotograf.pdf" target="_blank">Fotoğraf</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/GRAF%C4%B0K%20VE%20FOTO%C4%9ERAF/19125651_Grafik.pdf" target="_blank">Grafik</a></li>
+            </ul>
+        </div>
+
+<div class="card">
+            <div class="card-header">GÜZELLİK VE SAÇ BAKIM HİZMETLERİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/G%C3%9CZELL%C4%B0K%20VE%20SA%C3%87%20BAKIM%20H%C4%B0ZMETLER%C4%B0/19125329_Cilt-Bakimi-ve-Makyaj.pdf" target="_blank">Cilt Bakımı ve Makyaj</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/G%C3%9CZELL%C4%B0K%20VE%20SA%C3%87%20BAKIM%20H%C4%B0ZMETLER%C4%B0/19125539_Erkek-Kuaforu.pdf" target="_blank">Erkek Kuaförü</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/G%C3%9CZELL%C4%B0K%20VE%20SA%C3%87%20BAKIM%20H%C4%B0ZMETLER%C4%B0/19125654_Kadin-Kuaforu.pdf" target="_blank">Kadın Kuaförü</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">HARİTA-TAPU-KADASTRO</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/HAR%C4%B0TA-TAPU-KADASTRO/19125652_Harita-Kadastro.pdf" target="_blank">Harita Kadastro</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">HAYVAN YETİŞTİRİCİLİĞİ VE SAĞLIĞI</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/HAYVAN%20YET%C4%B0%C5%9ET%C4%B0R%C4%B0C%C4%B0L%C4%B0%C4%9E%C4%B0%20VES%20A%C4%9ELI%C4%9E%C4%B0/19125220_Aricilik.pdf" target="_blank">Arıcılık</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/HAYVAN%20YET%C4%B0%C5%9ET%C4%B0R%C4%B0C%C4%B0L%C4%B0%C4%9E%C4%B0%20VES%20A%C4%9ELI%C4%9E%C4%B0/19125328_Buyukbas-Hayvan-Yetistiriciligi.pdf" target="_blank">Büyükbaş Hayvan Yetiştiriciliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/HAYVAN%20YET%C4%B0%C5%9ET%C4%B0R%C4%B0C%C4%B0L%C4%B0%C4%9E%C4%B0%20VES%20A%C4%9ELI%C4%9E%C4%B0/19125539_Ev-ve-Sus-Hayvanlari.pdf" target="_blank">Ev ve Süs Hayvanları</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/HAYVAN%20YET%C4%B0%C5%9ET%C4%B0R%C4%B0C%C4%B0L%C4%B0%C4%9E%C4%B0%20VES%20A%C4%9ELI%C4%9E%C4%B0/19125540_Evcil-Hayvan-Kuaforlugu.pdf" target="_blank">Evcil Hayvan Kuaförlüğü</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/HAYVAN%20YET%C4%B0%C5%9ET%C4%B0R%C4%B0C%C4%B0L%C4%B0%C4%9E%C4%B0%20VES%20A%C4%9ELI%C4%9E%C4%B0/19125749_Kanatli-Hayvan-Yetistiriciligi.pdf" target="_blank">Kanatlı Hayvan Yetiştiriciliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/HAYVAN%20YET%C4%B0%C5%9ET%C4%B0R%C4%B0C%C4%B0L%C4%B0%C4%9E%C4%B0%20VES%20A%C4%9ELI%C4%9E%C4%B0/19125751_Kucukbas-Hayvan-Yetistiriciligi.pdf" target="_blank">Küçükbaş Hayvan Yetiştiriciliği</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">KONAKLAMA VE SEYAHAT HİZMETLERİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/KONAKLAMA%20VE%20SEYAHAT%20H%C4%B0ZMETLER%C4%B0/19125652_Hali-Temizleme-ve-Bakim.pdf" target="_blank">Halı Temizleme ve Bakım</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/KONAKLAMA%20VE%20SEYAHAT%20H%C4%B0ZMETLER%C4%B0/19125750_Kat-Hizmetleri.pdf" target="_blank">Kat Hizmetleri</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/KONAKLAMA%20VE%20SEYAHAT%20H%C4%B0ZMETLER%C4%B0/19125751_Kuru-Temizleme.pdf" target="_blank">Kuru Temizleme</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/KONAKLAMA%20VE%20SEYAHAT%20H%C4%B0ZMETLER%C4%B0/20202524_Operasyon.pdf" target="_blank">Operasyon</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/KONAKLAMA%20VE%20SEYAHAT%20H%C4%B0ZMETLER%C4%B0/20202648_On-Buro.pdf" target="_blank">Ön Büro</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/KONAKLAMA%20VE%20SEYAHAT%20H%C4%B0ZMETLER%C4%B0/20202649_Rezervasyon.pdf" target="_blank">Rezervasyon</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">KUYUMCULUK TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/KUYUMCULUK%20TEKNOLOJ%C4%B0S%C4%B0/19125425_Degerli-ve-Yari-Degerli-Tas-Islemeciligi.pdf" target="_blank">Değerli ve Yarı Değerli Taş İşlemeciliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/KUYUMCULUK%20TEKNOLOJ%C4%B0S%C4%B0/20202803_Taki-Imalati.pdf" target="_blank">Takı İmalatı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/KUYUMCULUK%20TEKNOLOJ%C4%B0S%C4%B0/20202805_Vitrin-Kuyumculugu.pdf" target="_blank">Vitrin Kuyumculuğu</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">KİMYA TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/K%C4%B0MYA%20TEKNOLOJ%C4%B0S%C4%B0/19125424_Cimento-ve-Yapi-Kimyasallari-Uretimi.pdf" target="_blank">Çimento ve Yapı Kimyasalları Üretimi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/K%C4%B0MYA%20TEKNOLOJ%C4%B0S%C4%B0/19125426_Deri-Isleme.pdf" target="_blank">Deri İşleme</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/K%C4%B0MYA%20TEKNOLOJ%C4%B0S%C4%B0/19125748_Kagit-Uretim.pdf" target="_blank">Kağıt Üretim</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/K%C4%B0MYA%20TEKNOLOJ%C4%B0S%C4%B0/20202804_Temizlik-Kozmetik-ve-Parfumeri-Urunleri-Uretimi.pdf" target="_blank">Temizlik Kozmetik ve Parfümeri Ürünleri Üretimi</a></li>
+            </ul>
+        </div>
+
+<div class="card">
+            <div class="card-header">MAKİNE TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/MAK%C4%B0NE%20TEKNOLOJ%C4%B0S%C4%B0/19125220_Anahtarcilik-ve-Cilingirlik.pdf" target="_blank">Anahtarcılık ve Çilingirlik</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MAK%C4%B0NE%20TEKNOLOJ%C4%B0S%C4%B0/19125326_Bilgisayar-Destekli-Endustriyel-Modelleme.pdf" target="_blank">Bilgisayar Destekli Endüstriyel Modelleme</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MAK%C4%B0NE%20TEKNOLOJ%C4%B0S%C4%B0/19125326_Bilgisayar-Destekli-Makine-Ressamligi.pdf" target="_blank">Bilgisayar Destekli Makine Ressamlığı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MAK%C4%B0NE%20TEKNOLOJ%C4%B0S%C4%B0/19125326_Bilgisayarli-Makine-Imalati.pdf" target="_blank">Bilgisayarlı Makine İmalatı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MAK%C4%B0NE%20TEKNOLOJ%C4%B0S%C4%B0/19125425_Degirmencilik.pdf" target="_blank">Değirmencilik</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MAK%C4%B0NE%20TEKNOLOJ%C4%B0S%C4%B0/19125432_Endustriyel-Kalip.pdf" target="_blank">Endüstriyel Kalıp</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MAK%C4%B0NE%20TEKNOLOJ%C4%B0S%C4%B0/19125752_Makine-Bakim-Onarim.pdf" target="_blank">Makine Bakım Onarım</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MAK%C4%B0NE%20TEKNOLOJ%C4%B0S%C4%B0/19125753_Mermer-Isleme.pdf" target="_blank">Mermer İşleme</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MAK%C4%B0NE%20TEKNOLOJ%C4%B0S%C4%B0/20202649_Saat-Tamirciligi.pdf" target="_blank">Saat Tamirciliği</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">MATBAA TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/MATBAA%20TEKNOLOJ%C4%B0S%C4%B0/19125223_Baski-Oncesi.pdf" target="_blank">Baskı Öncesi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MATBAA%20TEKNOLOJ%C4%B0S%C4%B0/19125223_Baski-Sonrasi.pdf" target="_blank">Baskı Sonrası</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MATBAA%20TEKNOLOJ%C4%B0S%C4%B0/19125427_Dijital-Baski.pdf" target="_blank">Dijital Baskı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MATBAA%20TEKNOLOJ%C4%B0S%C4%B0/19125540_Flekso-Baski.pdf" target="_blank">Flekso Baskı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MATBAA%20TEKNOLOJ%C4%B0S%C4%B0/20202524_Ofset-Baski.pdf" target="_blank">Ofset Baskı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MATBAA%20TEKNOLOJ%C4%B0S%C4%B0/20202651_Serigrafi-Baski.pdf" target="_blank">Serigrafi Baskı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MATBAA%20TEKNOLOJ%C4%B0S%C4%B0/20202803_Tampon-Baski.pdf" target="_blank">Tampon Baskı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MATBAA%20TEKNOLOJ%C4%B0S%C4%B0/20202804_Tifdruk-Baski.pdf" target="_blank">Tifdruk Baskı</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">METAL TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%20TEKNOLOJ%C4%B0S%C4%B0/19125221_Avizecilik.pdf" target="_blank">Avizecilik</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%20TEKNOLOJ%C4%B0S%C4%B0/19125331_Celik-Konstruksiyon.pdf" target="_blank">Çelik Konstrüksiyon</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%20TEKNOLOJ%C4%B0S%C4%B0/19125538_Endustriyel-Reklamci-Tabelaci.pdf" target="_blank">Endüstriyel Reklamcı Tabelacı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%20TEKNOLOJ%C4%B0S%C4%B0/19125654_Isil-Islem.pdf" target="_blank">Isıl İşlem</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%20TEKNOLOJ%C4%B0S%C4%B0/19125750_Karosercilik.pdf" target="_blank">Karosercilik</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%20TEKNOLOJ%C4%B0S%C4%B0/19125750_Kaynakcilik.pdf" target="_blank">Kaynakçılık</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%20TEKNOLOJ%C4%B0S%C4%B0/19125754_Metal-Dograma.pdf" target="_blank">Metal Doğrama</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%20TEKNOLOJ%C4%B0S%C4%B0/19125754_Metal-Levha-Islemeciligi.pdf" target="_blank">Metal Levha İşlemeciliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%20TEKNOLOJ%C4%B0S%C4%B0/19125755_Metal-Yuzey-Boyama.pdf" target="_blank">Metal Yüzey Boyama</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%20TEKNOLOJ%C4%B0S%C4%B0/20202649_Sac-Isleri.pdf" target="_blank">Sac İşleri</a></li>
+            </ul>
+        </div>
+
+<div class="card">
+            <div class="card-header">METALÜRJİ TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%C3%9CRJ%C4%B0%20TEKNOLOJ%C4%B0S%C4%B0/19125429_Dokum.pdf" target="_blank">Döküm</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/METAL%C3%9CRJ%C4%B0%20TEKNOLOJ%C4%B0S%C4%B0/19125654_Izabe.pdf" target="_blank">İzabe</a></li>
+            </ul>
+        </div>
+
+
+
+<div class="card">
+            <div class="card-header">MOBİLYA VE İÇ MEKÂN TASARIMI</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/MOB%C4%B0LYA%20VE%20%C4%B0%C3%87%20MEK%C3%82N%20TASARIMI/19125219_Ahsap-Dograma-Teknolojisi.pdf" target="_blank">Ahşap Doğrama Teknolojisi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOB%C4%B0LYA%20VE%20%C4%B0%C3%87%20MEK%C3%82N%20TASARIMI/19125653_Ic-Mekan-ve-Mobilya-Teknolojisi.pdf" target="_blank">İç Mekân ve Mobilya Teknolojisi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOB%C4%B0LYA%20VE%20%C4%B0%C3%87%20MEK%C3%82N%20TASARIMI/20202523_Mobilya-Iskeleti-ve-Dosemesi.pdf" target="_blank">Mobilya İskeleti ve Döşemesi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOB%C4%B0LYA%20VE%20%C4%B0%C3%87%20MEK%C3%82N%20TASARIMI/20202523_Mobilya-Susleme-Sanatlari.pdf" target="_blank">Mobilya Süsleme Sanatları</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOB%C4%B0LYA%20VE%20%C4%B0%C3%87%20MEK%C3%82N%20TASARIMI/20202524_Oto-Dosemeciligi.pdf" target="_blank">Oto Döşemeciliği</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">MODA TASARIM TEKNOLOJİLERİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/MODA%20TASARIM%20TEKNOLOJ%C4%B0LER%C4%B0/19125426_Deri-Giyim.pdf" target="_blank">Deri Giyim</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MODA%20TASARIM%20TEKNOLOJ%C4%B0LER%C4%B0/19125539_Erkek-Terziligi.pdf" target="_blank">Erkek Terziliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MODA%20TASARIM%20TEKNOLOJ%C4%B0LER%C4%B0/19125652_Hazir-Giyim-Model-Makineciligi.pdf" target="_blank">Hazır Giyim Model Makineciliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MODA%20TASARIM%20TEKNOLOJ%C4%B0LER%C4%B0/19125652_Ic-Giyim-Modelistligi.pdf" target="_blank">İç Giyim Modelistliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MODA%20TASARIM%20TEKNOLOJ%C4%B0LER%C4%B0/19125748_Kadin-Terziligi.pdf" target="_blank">Kadın Terziliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MODA%20TASARIM%20TEKNOLOJ%C4%B0LER%C4%B0/19125751_Kesim.pdf" target="_blank">Kesim</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MODA%20TASARIM%20TEKNOLOJ%C4%B0LER%C4%B0/20202523_Modelistlik.pdf" target="_blank">Modelistlik</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">MOTORLU ARAÇLAR TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/MOTORLU%20ARA%C3%87LAR%20TEKNOLOJ%C4%B0S%C4%B0/19125428_Dizel-Motorlari-Yakit-Pompasi-ve-Enjektor-Ayarciligi.pdf" target="_blank">Dizel Motorları Yakıt Pompası ve Enjektör Ayarcılığı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOTORLU%20ARA%C3%87LAR%20TEKNOLOJ%C4%B0S%C4%B0/19125654_Is-Makineleri.pdf" target="_blank">İş Makineleri</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOTORLU%20ARA%C3%87LAR%20TEKNOLOJ%C4%B0S%C4%B0/20202523_Motorlu-Araclar-LPG-Sistemleri-Bakim-ve-Onarimciligi.pdf" target="_blank">Motorlu Araçlar LPG Sistemleri Bakım ve Onarımcılığı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOTORLU%20ARA%C3%87LAR%20TEKNOLOJ%C4%B0S%C4%B0/20202523_Motosiklet-Tamirciligi.pdf" target="_blank">Motosiklet Tamirciliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOTORLU%20ARA%C3%87LAR%20TEKNOLOJ%C4%B0S%C4%B0/20202524_Otomotiv-Boya.pdf" target="_blank">Otomotiv Boya</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOTORLU%20ARA%C3%87LAR%20TEKNOLOJ%C4%B0S%C4%B0/20202524_Otomotiv-Elektrikciligi.pdf" target="_blank">Otomotiv Elektrikçiliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOTORLU%20ARA%C3%87LAR%20TEKNOLOJ%C4%B0S%C4%B0/20202525_Otomotiv-Elektromekanik.pdf" target="_blank">Otomotiv Elektromekanik</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOTORLU%20ARA%C3%87LAR%20TEKNOLOJ%C4%B0S%C4%B0/20202525_Otomotiv-Govde.pdf" target="_blank">Otomotiv Gövde</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOTORLU%20ARA%C3%87LAR%20TEKNOLOJ%C4%B0S%C4%B0/20202647_Otomotiv-Mekanikerligi.pdf" target="_blank">Otomotiv Mekanikerliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOTORLU%20ARA%C3%87LAR%20TEKNOLOJ%C4%B0S%C4%B0/20202648_On-Duzen-Ayarciligi-ve-Lastikcilik.pdf" target="_blank">Ön Düzen Ayarcılığı ve Lastikçilik</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/MOTORLU%20ARA%C3%87LAR%20TEKNOLOJ%C4%B0S%C4%B0/20202648_Otomotiv-Motor-Yenilestirmeciligi.pdf" target="_blank">Otomotiv Motor Yenileştirmeciliği</a></li>
+            </ul>
+        </div>
+
+<div class="card">
+            <div class="card-header">YİYECEK İÇECEK HİZMETLERİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/Y%C4%B0YECEK%20%C4%B0%C3%87ECEK%20H%C4%B0ZMETLER%C4%B0/19125221_Ascilik.pdf" target="_blank">Aşçılık</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/Y%C4%B0YECEK%20%C4%B0%C3%87ECEK%20H%C4%B0ZMETLER%C4%B0/19125540_Firincilik.pdf" target="_blank">Fırıncılık</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/Y%C4%B0YECEK%20%C4%B0%C3%87ECEK%20H%C4%B0ZMETLER%C4%B0/19125749_Kantin-Isletmeciligi.pdf" target="_blank">Kantin İşletmeciliği</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/Y%C4%B0YECEK%20%C4%B0%C3%87ECEK%20H%C4%B0ZMETLER%C4%B0/19125750_Kasaplik.pdf" target="_blank">Kasaplık</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/Y%C4%B0YECEK%20%C4%B0%C3%87ECEK%20H%C4%B0ZMETLER%C4%B0/20202649_Pasta-ve-Tatli-Yapimi.pdf" target="_blank">Pasta ve Tatlı Yapımı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/Y%C4%B0YECEK%20%C4%B0%C3%87ECEK%20H%C4%B0ZMETLER%C4%B0/20202651_Servis.pdf" target="_blank">Servis</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">İNŞAAT TEKNOLOJİSİ</div>
+            <ul class="file-list">
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125219_Ahsap-Yapi-Sistemleri-B1.Ahsap-Yapi-Imalatcisi.pdf" target="_blank">Ahşap Yapı İmalatçısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125219_Ahsap-Yapi-Sistemleri-B2.Ahsap-Dograma-Imalatcisi.pdf" target="_blank">Ahşap Doğrama İmalatçısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125219_Ahsap-Yapi-Sistemleri-B3.B4.Ahsap-Yer-Dosemecisi.pdf" target="_blank">Ahşap Yer Döşemecisi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125223_Beton-Cimento-ve-Zemin-Teknolojisi.pdf" target="_blank">Beton Çimento ve Zemin Teknolojisi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125223_Betonarme-Kalip-ve-Donati-Sistemleri-B1.Betonarme-Demircisi.pdf" target="_blank">Betonarme Demircisi</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125223_Betonarme-Kalip-ve-Donati-Sistemleri-B2.Betonarme-Kalipcisi.pdf" target="_blank">Betonarme Kalıpçısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125224_Betonarme-Kalip-ve-Donati-Sistemleri-B3.Betoncu.pdf" target="_blank">Betoncu</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125328_Cephe-Sistemleri-ve-PVC-Dograma-B1.Cephe-Giydirme-Montajcisi.pdf" target="_blank">Cephe Giydirme Montajcısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125329_Cati-Sistemleri-B1.Ahsap-Cati-Imalatcisi.pdf" target="_blank">Ahşap Çatı İmalatçısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125329_Cati-sistemleri-B2.Cati-Kaplamaci.pdf" target="_blank">Çatı Kaplamacı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125329_Cephe-Sistemleri-ve-PVC-Dograma-B2.PVC-Dograma-Imalat-ve-Montajcisi.pdf" target="_blank">PVC Doğrama İmalat ve Montajcısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125330_Cati-Sistemleri-B3.Cati-Oluk-ve-Yagmur-Inis-Borusu-Montajcisi.pdf" target="_blank">Çatı Oluk ve Yağmur İniş Borusu Montajcısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125331_Celik-Yapi-Teknik-Ressamligi.pdf" target="_blank">Çelik Yapı Teknik Ressamlığı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/19125653_Ic-Mekan-Teknik-Ressamligi.pdf" target="_blank">İç Mekân Teknik Ressamlığı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202522_Mimari-Restorasyon.pdf" target="_blank">Mimari Restorasyon</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202522_Mimari-Yapi-Teknik-Ressamligi.pdf" target="_blank">Mimari Yapı Teknik Ressamlığı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202802_Statik-Yapi-Teknik-Ressamligi.pdf" target="_blank">Statik Yapı Teknik Ressamlığı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202850_Yapi-Dekorasyonu-B1.Insaat-Boyacisi.pdf" target="_blank">İnşaat Boyacısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202850_Yapi-Dekorasyonu-B2.Alci-Sivaci.pdf" target="_blank">Alçı Sıvacı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202851_Yapi-Dekorasyonu-B3.Alci-Levha-Kaplamaci.pdf" target="_blank">Alçı Levha Kaplamacı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202851_Yapi-Dekorasyonu-B4.Alci-Kartonpiyerci.pdf" target="_blank">Alçı Kartonpiyerci</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202851_Yapi-Dekorasyonu-B5.Duvar-Kagitci.pdf" target="_blank">Duvar Kağıtçı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202851_Yapi-Dekorasyonu-B6.Somine-Barbeku-Imalatcisi.pdf" target="_blank">Şömine Barbekü İmalatçısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202851_Yapi-Duvar-ve-Siva-Sistemleri-B1.Duvarci.pdf" target="_blank">Duvarcı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202851_Yapi-Duvar-ve-Siva-Sistemleri-B2.Tas-Duvarci.pdf" target="_blank">Taş Duvarcı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202852_Yapi-Duvar-ve-Siva-Sistemleri-B3.Sivaci.pdf" target="_blank">Sıvacı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202852_Yapi-Yalitimi-B1.Isi-Yaliimcisi.pdf" target="_blank">Isı Yalıtımcısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202852_Yapi-Yalitimi-B2.Su-Yalitimcisi.pdf" target="_blank">Su Yalıtımcısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202852_Yapi-Yalitimi-B3.Ses-Yalitimcisi.pdf" target="_blank">Ses Yalıtımcısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202852_Yapi-Yalitimi-B4.Yangin-Yalitimcisi.pdf" target="_blank">Yangın Yalıtımcısı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202852_Yapi-Yuzey-Kaplama-B1.Seramik-Karo-Kaplamaci.pdf" target="_blank">Seramik Karo Kaplamacı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202853_Yapi-Yuzey-Kaplama-B2.Dogal-Yapay-Tas-Kaplamaci.pdf" target="_blank">Doğal Yapay Taş Kaplamacı</a></li>
+                <li class="file-item"><a class="file-link" href="ustalik/%C4%B0N%C5%9EAAT%20TEKNOLOJ%C4%B0S%C4%B0/20202853_Yapi-Yuzey-Kaplama-B3.Parke-Tasi-Bordur-Kaplamaci.pdf" target="_blank">Parke Taşı Bordür Kaplamacı</a></li>
+            </ul>
+        </div>
+
+</div> <div class="footer">
+        <p>&copy; 2026 Atakum Mesleki Eğitim Merkezi (MESEM) - Kalfalık Sınav Soruları Arşivi</p>
+        <p>Mustafa ŞAHİN - Bilişim Teknolojileri Öğretmeni</p>
+    </div>
+
+    <script>
+        function filterCards() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toUpperCase();
+            const cards = document.getElementsByClassName('card');
+
+            for (let i = 0; i < cards.length; i++) {
+                const header = cards[i].getElementsByClassName('card-header')[0];
+                const fileItems = cards[i].getElementsByClassName('file-item');
+                let foundInHeader = header.innerText.toUpperCase().indexOf(filter) > -1;
+                let foundInFiles = false;
+
+                for (let j = 0; j < fileItems.length; j++) {
+                    if (fileItems[j].innerText.toUpperCase().indexOf(filter) > -1) {
+                        foundInFiles = true;
+                        fileItems[j].style.display = ""; // Dosyayı göster
+                    } else {
+                        fileItems[j].style.display = "none"; // Dosyayı gizle
+                    }
+                }
+
+                if (foundInHeader || foundInFiles) {
+                    cards[i].style.display = "";
+                    // Eğer sadece başlıkta bulduysa tüm dosyaları geri göster
+                    if (foundInHeader && filter !== "") {
+                        for (let k = 0; k < fileItems.length; k++) {
+                            fileItems[k].style.display = "";
+                        }
+                    }
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
